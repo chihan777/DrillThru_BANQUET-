@@ -2,7 +2,6 @@
   "version": 3,
   "outputDirectory": ".vercel/output",
   "build": {
-    "command": "npm run vercel-build",
     "env": {
       "NITRO_PRESET": "vercel"
     }
