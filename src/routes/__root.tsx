@@ -21,7 +21,9 @@ function NotFoundComponent() {
         <p className="mt-3 text-sm text-white/60">
           The page you're looking for has drifted from the ballroom.
         </p>
-        <Link to="/" className="btn-gold mt-8 inline-flex">Return home</Link>
+        <Link to="/" className="btn-gold mt-8 inline-flex">
+          Return home
+        </Link>
       </div>
     </div>
   );
@@ -42,12 +44,17 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         <p className="mt-2 text-sm text-white/60">Please try again in a moment.</p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <button
-            onClick={() => { router.invalidate(); reset(); }}
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
             className="btn-gold"
           >
             Try again
           </button>
-          <a href="/" className="btn-ghost-gold">Go home</a>
+          <a href="/" className="btn-ghost-gold">
+            Go home
+          </a>
         </div>
       </div>
     </div>
@@ -67,7 +74,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "DrillThru Banquet" },
       { name: "theme-color", content: "#111111" },
-      { property: "og:title", content: "DrillThru Banquet — Where Celebrations Become Timeless Memories" },
+      {
+        property: "og:title",
+        content: "DrillThru Banquet — Where Celebrations Become Timeless Memories",
+      },
       {
         property: "og:description",
         content:

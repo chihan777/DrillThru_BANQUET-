@@ -51,11 +51,11 @@
   --radius: 0.5rem;
 
   /* Brand tokens */
-  --ink: oklch(0.14 0.006 60);           /* #111111 matte black */
-  --cream: oklch(0.975 0.005 90);        /* soft luxe background */
-  --gold: oklch(0.78 0.13 85);           /* #D4AF37 luxury gold */
+  --ink: oklch(0.14 0.006 60); /* #111111 matte black */
+  --cream: oklch(0.975 0.005 90); /* soft luxe background */
+  --gold: oklch(0.78 0.13 85); /* #D4AF37 luxury gold */
   --gold-soft: oklch(0.88 0.08 88);
-  --emerald: oklch(0.62 0.16 155);       /* #00C853 emerald accent */
+  --emerald: oklch(0.62 0.16 155); /* #00C853 emerald accent */
 
   --background: oklch(0.975 0.005 90);
   --foreground: oklch(0.17 0.006 60);
@@ -99,8 +99,12 @@
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -108,7 +112,10 @@
     -webkit-font-smoothing: antialiased;
     font-feature-settings: "ss01", "ss02";
   }
-  ::selection { background: var(--gold); color: var(--ink); }
+  ::selection {
+    background: var(--gold);
+    color: var(--ink);
+  }
 }
 
 @utility font-display {
@@ -164,7 +171,10 @@
   background: linear-gradient(135deg, #f4d980, #d4af37 55%, #a17d20);
   border: 1px solid #b6902a;
   border-radius: 999px;
-  transition: transform 0.5s cubic-bezier(.2,.8,.2,1), box-shadow 0.5s, filter 0.5s;
+  transition:
+    transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.5s,
+    filter 0.5s;
   box-shadow: 0 12px 40px -14px color-mix(in oklab, var(--gold) 60%, transparent);
   &:hover {
     transform: translateY(-2px);
@@ -207,7 +217,10 @@
   border-radius: 1.25rem;
   background: color-mix(in oklab, #ffffff 100%, transparent);
   border: 1px solid color-mix(in oklab, var(--gold) 18%, transparent);
-  transition: transform 0.6s cubic-bezier(.2,.8,.2,1), box-shadow 0.6s, border-color 0.6s;
+  transition:
+    transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.6s,
+    border-color 0.6s;
   overflow: hidden;
   &:hover {
     transform: translateY(-8px);
@@ -222,7 +235,10 @@
   background: linear-gradient(180deg, #161616 0%, #0d0d0d 100%);
   border: 1px solid color-mix(in oklab, var(--gold) 20%, transparent);
   color: var(--cream);
-  transition: transform 0.6s cubic-bezier(.2,.8,.2,1), box-shadow 0.6s, border-color 0.6s;
+  transition:
+    transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.6s,
+    border-color 0.6s;
   overflow: hidden;
   &:hover {
     transform: translateY(-8px);
@@ -232,34 +248,68 @@
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 @utility shimmer {
-  background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--gold) 40%, transparent), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--gold) 40%, transparent),
+    transparent
+  );
   background-size: 200% 100%;
   animation: shimmer 3s linear infinite;
 }
 
 @keyframes float-slow {
-  0%,100% { transform: translateY(0) }
-  50% { transform: translateY(-10px) }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
-@utility float-slow { animation: float-slow 6s ease-in-out infinite; }
+@utility float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
 
 @keyframes ken-burns {
-  0% { transform: scale(1.05) }
-  100% { transform: scale(1.18) }
+  0% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1.18);
+  }
 }
-@utility ken-burns { animation: ken-burns 18s ease-out forwards; }
+@utility ken-burns {
+  animation: ken-burns 18s ease-out forwards;
+}
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(24px) }
-  to { opacity: 1; transform: translateY(0) }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-@utility fade-up { animation: fade-up 0.9s cubic-bezier(.2,.8,.2,1) both; }
+@utility fade-up {
+  animation: fade-up 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
 
 @keyframes shine {
-  0% { transform: translateX(-100%) skewX(-20deg) }
-  100% { transform: translateX(200%) skewX(-20deg) }
+  0% {
+    transform: translateX(-100%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-20deg);
+  }
 }
