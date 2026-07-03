@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "outputDirectory": ".vercel/output",
+  "build": {
+    "env": {
+      "NITRO_PRESET": "vercel"
+    }
+  }
+}
